@@ -11,6 +11,7 @@
 -->
 		<link rel="stylesheet" href="/css/bootstrap.min.css">
 		<link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/1.6.4/fullcalendar.css">
 		<link rel="stylesheet" href="/css/main.css">
 
     </head>
@@ -29,7 +30,7 @@
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="/">Home</a></li>
-
+<li><a href="/events.html">Events</a></li>
           </ul>
         </div>
       </div>
@@ -50,5 +51,23 @@
        </div>
 <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/1.6.4/fullcalendar.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/1.6.4/gcal.js"></script>
+	
+<script>
+$(document).ready(function() {
+
+    // page is now ready, initialize the calendar...
+
+    $('#calendar').fullCalendar({
+        events: {
+            url: 'https://www.google.com/calendar/feeds/winnipegstrengthandfitness%40gmail.com/public/basic',
+            className: 'gcal-event',           // an option!
+            currentTimezone: 'America/Winnipeg' // an option!
+        }
+    })
+
+});
+</script>
     </body>
 </html>
